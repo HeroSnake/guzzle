@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        android:paddingLeft="5dp"
+        android:background="#eaedf2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="15dp"
+            android:layout_height="wrap_content"
+            android:text="Commentaire : "/>
+
+        <EditText
+            android:id="@+id/commentaireVisite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        android:paddingLeft="5dp"
+        android:background="#eaedf2">
+
+        <TextView
+            android:layout_width="100dp"
+            android:textSize="15dp"
+            android:layout_height="wrap_content"
+            android:text="Médecin : "/>
+
+        <Spinner
+            android:id="@+id/medecinVisite"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        android:paddingLeft="5dp"
+        android:background="#eaedf2">
+
+        <TextView
+            android:layout_width="100dp"
+            android:textSize="15dp"
+            android:layout_height="wrap_content"
+            android:text="Visiteur : "/>
+
+        <Spinner
+            android:id="@+id/visiteurVisite"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <DatePicker
+        android:id="@+id/dateVisite"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ajouter"
+        android:id="@+id/btnValiderVisite"/>
+
+</LinearLayout>

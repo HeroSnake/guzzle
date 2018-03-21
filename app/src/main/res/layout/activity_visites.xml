@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.syxflorent.guzzle.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btnActualizeVisite"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Actualiser" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Liste des Visites"
+                android:textSize="30dp"
+                android:layout_margin="5dp"/>
+
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/add_visite"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Créer une nouvelle Visite" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_visites"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+
+</LinearLayout>
