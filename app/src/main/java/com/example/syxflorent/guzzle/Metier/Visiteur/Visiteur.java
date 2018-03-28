@@ -32,7 +32,7 @@ public class Visiteur implements Serializable{
 
     @Override
     public String toString() {
-        return "Visiteur : " + nom + " " + prenom;
+        return nom + " " + prenom;
     }
 
     public String getId() {

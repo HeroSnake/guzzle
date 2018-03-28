@@ -29,6 +29,11 @@
                 android:paddingLeft="5dp"
                 android:background="#eaedf2">
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date : "
+                    android:textSize="20sp"/>
+                <TextView
                     android:id="@+id/tv_date_visite"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -62,7 +67,11 @@
                 android:layout_marginBottom="5dp"
                 android:paddingLeft="5dp"
                 android:background="#eaedf2">
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Médecin : "
+                    android:textSize="20sp"/>
                 <TextView
                     android:id="@+id/tv_medecin_visite"
                     android:layout_width="wrap_content"
@@ -77,6 +86,11 @@
                 android:layout_marginBottom="5dp"
                 android:paddingLeft="5dp"
                 android:background="#eaedf2">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Visiteur : "
+                    android:textSize="20sp"/>
                 <TextView
                     android:id="@+id/tv_visiteur_visite"
                     android:layout_width="wrap_content"

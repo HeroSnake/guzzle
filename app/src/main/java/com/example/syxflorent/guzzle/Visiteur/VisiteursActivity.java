@@ -79,6 +79,7 @@ public class VisiteursActivity extends Activity {
                 startActivity(intent);
             }
         });
+
         actualizeVisiteur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

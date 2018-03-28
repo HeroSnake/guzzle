@@ -5,6 +5,8 @@ import com.example.syxflorent.guzzle.Metier.Medecin.Medecin;
 import com.example.syxflorent.guzzle.Metier.Visiteur.Visiteur;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -14,18 +16,16 @@ public class Visite implements Serializable{
     private String date;
     private String commentaire;
     private Medecin medecin;
-    private int medecin_id;
+    private String medecin_id;
     private Visiteur visiteur;
-    private int visiteur_id;
+    private String visiteur_id;
 
 
-    public Visite(String unId, String uneDate, String unCommentaire, Medecin unMedecin, int unIdMedecin, Visiteur unVisiteur, int unIdVisiteur){
+    public Visite(String unId, String uneDate, String unCommentaire, String unIdMedecin, String unIdVisiteur){
         this.id = unId;
         this.date = uneDate;
         this.commentaire = unCommentaire;
-        this.medecin = unMedecin;
         this.medecin_id = unIdMedecin;
-        this.visiteur = unVisiteur;
         this.visiteur_id = unIdVisiteur;
     }
 
@@ -34,16 +34,9 @@ public class Visite implements Serializable{
         ligne.put("id", this.id);
         ligne.put("date", this.date);
         ligne.put("commentaire", this.commentaire);
-        ligne.put("medecin", this.medecin.toString());
-        ligne.put("visite", this.visiteur.toString());
+        ligne.put("medecin_id", this.medecin_id);
+        ligne.put("visiteur_id", this.visiteur_id);
         return ligne;
-    }
-
-    @Override
-    public String toString() {
-        return "Date : " + date + '\''
-                + "Id : " + medecin_id + '\''
-                + "Médecin : " + medecin.toString();
     }
 
     public String getId() {
@@ -54,10 +47,13 @@ public class Visite implements Serializable{
         this.id = id;
     }
 
-    public String getDateVisite() { return  "Date : " + date;}
+    public String getDateVisite() {
+        String uneDate = date.substring(0, Math.min(date.length(), 10));
+        return  uneDate;
+    }
 
-    public void setDateVisite(String uneDateVisite) {
-        this.date = uneDateVisite;
+    public void setDate(String uneDate) {
+        this.date = uneDate;
     }
 
     public String getCommentaire() {
@@ -83,4 +79,14 @@ public class Visite implements Serializable{
     public void setVisiteur(Visiteur unVisiteur) {
         this.visiteur = unVisiteur;
     }
+
+    public String getVisiteur_id() {
+        return visiteur_id;
+    }
+
+    public void setVisiteur_id(String visiteur_id) { this.visiteur_id = visiteur_id; }
+
+    public String getMedecin_id() { return medecin_id; }
+
+    public void setMedecin_id(String medecin_id) { this.medecin_id = medecin_id; }
 }

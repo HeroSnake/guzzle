@@ -1,7 +1,5 @@
 package com.example.syxflorent.guzzle.Metier.Medecin;
 
-import com.example.syxflorent.guzzle.Metier.Visiteur.Visiteur;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -15,6 +13,7 @@ public class Medecins {
     public ArrayList<Medecin> getMedecins() {
         return medecins;
     }
+
 
     public ArrayList<HashMap<String, String>> getMedecinsArray(){
         ArrayList<HashMap<String, String>> liste = new ArrayList<HashMap<String, String>>();

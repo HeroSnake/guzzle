@@ -36,16 +36,15 @@ import java.util.Map;
 
 public class VisiteurDetailActivity extends AppCompatActivity {
 
-    EditText leNom;
-    EditText lePrenom;
+    EditText leNom, lePrenom;
     Visiteur unVisiteur;
     String ModVisiteurUrl = "http://192.168.210.2:22545/cakephp/visiteurs/edit/";
     String DelVisiteurUrl = "http://192.168.210.2:22545/cakephp/visiteurs/delete/";
-    String visitesUrl = "http://192.168.210.2:22545/cakephp/visiteurs/view/";
+    String visitesUrl = "http://192.168.210.2:22545/cakephp/visites.json";
     RequestQueue requestQueue;
     ListView listViewVisites;
     String idVisiteur;
-    Button buttonRetour;
+    Button buttonRetour, buttonCreerVisite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +66,7 @@ public class VisiteurDetailActivity extends AppCompatActivity {
         Button buttonMod = findViewById(R.id.btnModifierVisiteur);
         Button buttonDel = findViewById(R.id.btnSupprimerVisiteur);
         buttonRetour = findViewById(R.id.btnRetourDetailsVisiteurs);
+        buttonCreerVisite = findViewById(R.id.btnCreerVisite);
 
         buttonDel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,11 +134,17 @@ public class VisiteurDetailActivity extends AppCompatActivity {
         listViewVisites = findViewById(R.id.lv_visites);
         requestQueue = Volley.newRequestQueue(getApplicationContext());
 
-        final GsonRequest gsonRequest = new GsonRequest(visitesUrl + idVisiteur + ".json", Visites.class, null, new Response.Listener<Visites>() {
+        final GsonRequest gsonRequest = new GsonRequest(visitesUrl, Visites.class, null, new Response.Listener<Visites>() {
             @Override
             public void onResponse(Visites visites) {
                 ArrayList<Visite> liste = visites.getVisites();
-                VisiteAdapter adapterVisite = new VisiteAdapter(getApplicationContext(), liste);
+                ArrayList<Visite> listeTri = new ArrayList<>();
+                for(Visite element : liste){
+                    if( element.getVisiteur_id().equals(unVisiteur.getId())){
+                        listeTri.add(element);
+                    }
+                }
+                VisiteAdapter adapterVisite = new VisiteAdapter(getApplicationContext(), listeTri);
                 listViewVisites.setAdapter(adapterVisite);
             }
         }, new Response.ErrorListener() {
@@ -159,7 +165,14 @@ public class VisiteurDetailActivity extends AppCompatActivity {
             }
         });
 
-
+        buttonCreerVisite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CreateVisiteActivity.class);
+                intent.putExtra("Visiteur", unVisiteur);
+                startActivity(intent);
+            }
+        });
 
         VolleyHelper.getInstance(getApplicationContext()).addToRequestQueue(gsonRequest);
     }

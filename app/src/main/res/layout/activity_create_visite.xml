@@ -16,7 +16,7 @@
         android:background="#eaedf2">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:textSize="15dp"
             android:layout_height="wrap_content"
             android:text="Commentaire : "/>
@@ -35,17 +35,16 @@
         android:paddingLeft="5dp"
         android:background="#eaedf2">
 
-        <TextView
-            android:layout_width="100dp"
-            android:textSize="15dp"
-            android:layout_height="wrap_content"
-            android:text="Médecin : "/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="15dp"
+        android:layout_height="wrap_content"
+        android:text="Date : "/>
 
-        <Spinner
-            android:id="@+id/medecinVisite"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-
+        <EditText
+            android:id="@+id/dateVisite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,23 +55,17 @@
         android:background="#eaedf2">
 
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:textSize="15dp"
             android:layout_height="wrap_content"
-            android:text="Visiteur : "/>
+            android:text="Médecin : "/>
 
         <Spinner
-            android:id="@+id/visiteurVisite"
+            android:id="@+id/spinnerMedecinVisite"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
-
-    <DatePicker
-        android:id="@+id/dateVisite"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"/>
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -27,7 +27,7 @@ public class Medecin implements Serializable{
 
     @Override
     public String toString() {
-        return "Médecin : " + nom + " " + prenom;
+        return nom + " " + prenom;
     }
 
     public String getId() {
